@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -6,6 +7,8 @@ function Square(props) {
   return (
     <button className="square" onClick={props.onClick}>
       {props.value}
+=======
+>>>>>>> sydneyDev
     </button>
   );
 }
@@ -13,14 +16,21 @@ function Square(props) {
 class Board extends React.Component {
   renderSquare(i) {
     return (
+<<<<<<< HEAD
       <Square
         value={this.props.squares[i]}
         onClick={() => this.props.onClick(i)}
       />
+=======
+>>>>>>> sydneyDev
     );
   }
 
   render() {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> sydneyDev
     return (
       <div>
         <div className="board-row">
@@ -44,6 +54,7 @@ class Board extends React.Component {
 }
 
 class Game extends React.Component {
+<<<<<<< HEAD
   constructor(props) {
     super(props);
     this.state = {
@@ -75,32 +86,45 @@ class Game extends React.Component {
       xIsNext: !this.state.xIsNext
     });
   }
+=======
+constructor(props) {
+>>>>>>> sydneyDev
 
   jumpTo(step) {
     this.setState({
       stepNumber: step,
+<<<<<<< HEAD
       xIsNext: (step % 2) === 0
+=======
+>>>>>>> sydneyDev
     });
   }
 
   render() {
     const history = this.state.history;
     const current = history[this.state.stepNumber];
+<<<<<<< HEAD
     const winner = calculateWinner(current.squares);
+=======
+>>>>>>> sydneyDev
 
     const moves = history.map((step, move) => {
       const desc = move ?
         'Go to move #' + move :
         'Go to game start';
       return (
+<<<<<<< HEAD
         <li key={move}>
           <button onClick={() => this.jumpTo(move)}>{desc}</button>
+=======
+>>>>>>> sydneyDev
         </li>
       );
     });
 
     let status;
     if (winner) {
+<<<<<<< HEAD
       status = "Winner: " + winner;
     } else {
       status = "Next player: " + (this.state.xIsNext ? "X" : "O");
@@ -113,6 +137,8 @@ class Game extends React.Component {
             squares={current.squares}
             onClick={i => this.handleClick(i)}
           />
+=======
+>>>>>>> sydneyDev
         </div>
         <div className="game-info">
           <div>{status}</div>
@@ -125,7 +151,10 @@ class Game extends React.Component {
 
 // ========================================
 
+<<<<<<< HEAD
 ReactDOM.render(<Game />, document.getElementById("root"));
+=======
+>>>>>>> sydneyDev
 
 function calculateWinner(squares) {
   const lines = [
@@ -136,7 +165,10 @@ function calculateWinner(squares) {
     [1, 4, 7],
     [2, 5, 8],
     [0, 4, 8],
+<<<<<<< HEAD
     [2, 4, 6]
+=======
+>>>>>>> sydneyDev
   ];
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
@@ -146,4 +178,7 @@ function calculateWinner(squares) {
   }
   return null;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> sydneyDev
