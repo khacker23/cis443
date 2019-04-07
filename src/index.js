@@ -149,3 +149,19 @@ function calculateWinner(squares) {
   }
   return null;
 }
+
+var admin = require("firebase-admin");
+
+
+
+var serviceAccount = require("src/serviceAccountKey.json");
+
+
+
+admin.initializeApp({
+
+	credential: firebase.credential.cert(serviceAccount),
+
+	databaseURL: "https://project-12e14.firebaseio.com"
+
+});
